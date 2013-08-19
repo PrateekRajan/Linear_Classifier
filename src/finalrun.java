@@ -15,10 +15,8 @@ public class finalrun
 		
 		classifier newobj= new classifier();
 		double [][]tempFV= newobj.feature_vector();
-//		System.out.println("Matrix"+Arrays.deepToString(tempFV));
 		double[] feature_vector=MatrixMaths.getVector(tempFV);
-//		System.out.print("INPUT"+Arrays.toString(feature_vector));
-//		System.out.println(Arrays.deepToString(feature_vector));
+
 		
 		int numberOfClasses=10;
 		
@@ -42,9 +40,7 @@ public class finalrun
 				{ 
 					if (input.length()>0 )
 					{
-					//System.out.print(j+"Column"+x+" ");
 				    String [] temp=input.split(",");
-				    //System.out.println(input.split(",").length);
 				    base= new Double(temp[0]);
 				    
 				    
@@ -61,23 +57,9 @@ public class finalrun
 			}
 			//We need to do all the calculation inside this FOR LOOP for recognition upto array creation
 			double  weightxfeature= MatrixMaths.getDotProduct(weight,feature_vector);
-		
-//			if(base + weightxfeature>Vc)
-//			{				
-//				Vc =base + weightxfeature;
-//				System.out.print(x);
-//			}
-			
+
 			double Vc =weightxfeature+base;
 			compare[x]=Vc;
-			//System.out.println(compare[x]);
-			
-//			System.out.println(Arrays.deepToString(Vc));
-			
-			
-//			System.out.println(det);
-			
-			
 		}//end of FOR LOOP
 		double max=compare[0];
 		max_index=0;
@@ -90,7 +72,6 @@ public class finalrun
 				max_index=i;
 			}
 		}
-//		System.out.println(max_index);
 
 	}
 	
@@ -109,9 +90,7 @@ public class finalrun
 			int j = 0;
 			while ((input = br.readLine()) != null) {
 				if (input.length() > 0 & j<5 ) {
-					// System.out.print(j+"Column"+x+" ");
 					String[] temp = input.split(" ");
-					// System.out.println(input.split(",").length);
 					weightMatrix[j] = Double.parseDouble(temp[0]);
 					j++;
 
@@ -119,7 +98,6 @@ public class finalrun
 				
 				
 			}
-//			System.out.print(Arrays.toString(weightMatrix)+"NEXT");
 			br.close();
 			in.close();
 			fstream.close();
