@@ -54,16 +54,13 @@ public class covariance {
 		return covarianceList;
 	}
 
-	public static double[][] inverse() {
+	public double[][] inverse() {
 		covariance c = new covariance();
 		c.makeList();
 
-		// System.out.println(Arrays.deepToString(covar));
 		MatrixMaths obj = new MatrixMaths();
 		double[][] commoncovar = MatrixMaths.commonCovariance(c.covarianceList);
 		double[][] inverse = obj.calculateMatrixInverse(commoncovar);
-		// System.out.println(Arrays.deepToString(inverse));
-		// System.out.print(inverse.length);
 		return inverse;
 
 	}
@@ -71,12 +68,6 @@ public class covariance {
 	public static void main(String args[]) {
 		covariance objc = new covariance();
 		objc.inverse();
-
-		// System.out.println(Arrays.deepToString(inverse));
-		// System.out.println("The length is"+inverse.length);
-
-		// double [][] commoncovar= new double[10][5];
-
 	}
 
 }
