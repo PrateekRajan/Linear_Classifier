@@ -8,7 +8,7 @@ public class NDDE {
 		float NDDE=0;
 		int i = 0,j = 0,k = 0;
 	float[][] arr= new float [3][];
-	 arr[0]= new float[1000];//Use dynamic arrays in other programs
+	 arr[0]= new float[1000];
 	 arr[1]= new float[1000];
 	 arr[2]= new float[1000];
 	
@@ -36,11 +36,6 @@ public class NDDE {
 	br.close();
 	in.close();
 	fstream.close();
-	//for(i=0,j=0,k=0;i<arr[0].length;i++,j++,k++)
-	//{
-		//System.out.println(arr[0][i]+","+arr[1][j]+","+arr[2][k]);
-	//System.out.println("\n");
-	//}
 	  
 	}
 	catch(Exception e)
@@ -49,8 +44,7 @@ public class NDDE {
 		
 	}
 	float d_high=0,x_high=0,y_high=0, x_low=0, y_low=0,d_low=0, high=0,low=0,stroke_length=0,total_stroke_length=0;
-	//d_high=Math.abs(arr[1][0]-arr[1][1])/Math.abs(arr[0][0]-arr[0][1]);
-	//d_low =Math.abs(arr[1][0]-arr[1][1])/Math.abs(arr[0][0]-arr[0][1]);
+
 	for(i=0,j=0;i<arr[0].length-1;i++,j++)
 	{
 		if(Math.abs(arr[1][j]-arr[1][j+1])/Math.abs(arr[0][i]-arr[0][i+1])>=d_high && arr[0][i]!=arr[0][i+1])
@@ -68,13 +62,6 @@ public class NDDE {
 		low=j+1;
 		}
 	}
-	//System.out.println(high+" ,"+ low);
-	
-	//System.out.println(high-low);
-	//System.out.println(x_high+" "+ y_high);
-	//System.out.println(high);
-	//System.out.println(x_low+" "+ y_low);
-	//System.out.println(low);
 	
      stroke_length= Math.abs(high-low);
      
@@ -85,19 +72,10 @@ public class NDDE {
 		total_stroke_length++;
 		i++;
 	}
-	//System.out.println(total_stroke_length);
 	NDDE= stroke_length/total_stroke_length;
-	//System.out.println(NDDE);
 
 		return NDDE;
 		
-	}
-	
-	public static void main(String args[])
-	{
-		
-	
-	
 	}
 	
 	
