@@ -16,13 +16,10 @@ public class MatrixMaths {
 		v2[0] = 4;
 		v2[1] = 1;
 		v2[2] = 7;
-		//System.out.println(getDotProduct(v1,v2));
 	}
 	
 	public static double getDotProduct(double[] vector1, double[] vector2)
 	{
-//		System.out.println("dot vector 1 length = " + vector1.length);
-//			System.out.println("dot vector 2 length = " + vector2.length);
 		ArrayRealVector v1 = new ArrayRealVector(vector1);
 		ArrayRealVector v2 = new ArrayRealVector(vector2);
 		double dotProduct = v1.dotProduct(v2);
@@ -31,11 +28,8 @@ public class MatrixMaths {
 	public static double[] getVector(double [][] matrix)
 	{
 		int length= matrix.length;
-		//System.out.println(Arrays.deepToString(matrix));
 		Array2DRowRealMatrix myMatrix = new Array2DRowRealMatrix(matrix);
 		double [] temp_vector = null;
-		//System.out.println("row = " + myMatrix.getRowDimension());
-		//System.out.println("column = " + myMatrix.getColumnDimension());
 		if(myMatrix.getColumnDimension() == 1)
 		{
 			temp_vector = myMatrix.getColumn(0);
@@ -43,19 +37,7 @@ public class MatrixMaths {
 		{
 			temp_vector = myMatrix.getRow(0);
 		}
-		
-//		double [] temp_vector= new double[5];
-//		for(int i=0; i<=length-1;i++)
-//		{
-//			temp_vector[i]=matrix[0][i];
-//			System.out.println(temp_vector[i]);
-//		}
-//		temp_vector[0]=matrix[0][0];
-//		temp_vector[1]=matrix[1][0];
-//		temp_vector[2]=matrix[2][0];
-//		temp_vector[3]=matrix[3][0];
-//		temp_vector[4]=matrix[4][0];
-//		
+
 		return temp_vector;
 	}
 
@@ -123,30 +105,13 @@ public class MatrixMaths {
 			matrix = matrix;
 			common = matrixSum(common, matrix);
 		}
-		// System.out.println(Arrays.deepToString(common));
 		return division(common, 90.0);
 	}
-
-	// public static double[][] transpose(double[][] matrix)
-	// {
-	// int len=matrix.length;
-	// int c=matrix[len].length;
-	// double [][]transpose=new double[c][len];
-	// for(int i=0;i<len;i++)
-	// {
-	// for(int j=0;j<c;j++)
-	// {
-	// transpose[j][i]=matrix[i][j];
-	// }
-	// }
-	// return transpose;
-	// }
 	public static double[][] transpose(double[] matrix) {
 		double[][] trans = new double[5][1];
 		for (int i = 0; i <= matrix.length - 1; i++) {
 			trans[i][0] = matrix[i];
 		}
-		// System.out.println(Arrays.deepToString(trans));
 		return trans;
 	}
 
@@ -154,20 +119,7 @@ public class MatrixMaths {
 		Array2DRowRealMatrix mat1 = new Array2DRowRealMatrix(matrix1);
 		Array2DRowRealMatrix mat2 = new Array2DRowRealMatrix(matrix2);
 		Array2DRowRealMatrix multiply = mat1.multiply(mat2);
-		// double [][]multiply= new double[5][1];
-		// int length1=matrix1.length;
-		// int length2=matrix2.length;
-		// for(int i = 0; i < length1; i++)
-		// {
-		// for(int j = 0; j < length2-1; j++)
-		// {
-		// for(int k = 0; k < length2-1; k++)
-		// {
-		//			  
-		// multiply[i][j] += matrix1[i][k]*matrix2[k][j];
-		// }
-		// }
-		// }
+	
 		return multiply.getData();
 	}
 
