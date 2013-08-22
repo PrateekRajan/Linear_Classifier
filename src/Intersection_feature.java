@@ -16,7 +16,7 @@ public class Intersection_feature
 		double r_intersection=0;
 		double temp1=0;double temp2=0;double temp3=0;
 		double arr[][]=new double[3][];
-		arr[0]= new double[1000];//Use dynamic arrays in other programs
+		arr[0]= new double[1000];
 		arr[1]= new double[1000];
 		arr[2]= new double[1000];
 		int length=0;
@@ -58,22 +58,7 @@ public class Intersection_feature
 			}
 		}
 		
-//		for(int p=0;p<=length-1;p++)
-//		{
-//			for(int q=p+1;q<=length-1;q++)
-//			{
-//				if(arr[0][p]==arr[0][q] && arr[1][p]==arr[1][q] && arr[2][p]!= arr[2][q])
-//				{
-//					r_intersection= r_intersection+0.5;
-//				}
-//			}
-//			}
-		
-		
-//		System.out.println(Arrays.toString(arr[0]));
-//		System.out.println(Arrays.toString(arr[1]));
-//		System.out.println(Arrays.toString(arr[2]));
-//		System.out.println(length);
+
 		for(int p=0;p<length-1;p++)
 		{
 			for(int q=p+1;q<length-1;q++)
@@ -81,29 +66,17 @@ public class Intersection_feature
 				temp1= Math.pow(arr[1][q]-arr[1][p],2);
 				temp2= Math.pow(arr[0][q]-arr[0][p], 2);
 				temp3= Math.pow(temp1+temp2, 0.5);
-//				System.out.println(temp3);
 				if(temp3<=2 | (arr[0][p]==arr[0][q] && arr[1][p]==arr[1][q] && arr[2][p]!= arr[2][q]))
 				{
 					intersection=intersection+0.5;
 				}
-				
-//				if((Math.pow((Math.pow((arr[1][q]-arr[1][p]),2)+Math.pow((arr[0][q]-arr[0][p]),2)),0.5))<=0.1/* arr[1][q]==arr[1][p] && arr[0][q]==arr[0][p] */ )
-//				{
-//					intersection = intersection+0.5;
-//				}
-				//System.out.println(Math.abs(Math.pow((Math.pow((arr[1][q]-arr[1][p]),2)+Math.pow((arr[0][q]-arr[0][p]),2)),0.5)));
+		
 			}
 		}
-//					System.out.println(r_intersection);
 					System.out.println(intersection);
-//		System.out.println(Arrays.toString(arr[0]));
-//		System.out.println(Arrays.toString(arr[1]));
+
 					return intersection;
 	}
-	public static void main(String args[])
-	{
-		//intersection();
-		
-	}
+
 
 }
