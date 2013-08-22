@@ -16,7 +16,7 @@ public class Distance_Feature
 		double distance_feature=0;
 		
 		float[][] arr= new float [3][];
-		 arr[0]= new float[1000];//Use dynamic arrays in other programs
+		 arr[0]= new float[1000];
 		 arr[1]= new float[1000];
 		 arr[2]= new float[1000];
 		
@@ -41,11 +41,7 @@ public class Distance_Feature
 			k++;
 				
 		}
-		//for(i=0,j=0,k=0;i<arr[0].length;i++,j++,k++)
-		//{
-		//	System.out.println(arr[0][i]+","+arr[1][j]+","+arr[2][k]);
-		//System.out.println("\n");
-		//}
+	
 		br.close();
 		in.close();
 		fstream.close(); 
@@ -68,34 +64,15 @@ public class Distance_Feature
 			final_point_y=arr[1][j];
 			j++;
 		}
-		//System.out.println(final_point_x +","+ final_point_y);
 		x1=arr[0][0];
 		y1=arr[1][0];
 		temp1=  Math.pow((final_point_x-arr[0][0]),2);
 		temp2=  Math.pow((final_point_y-arr[1][0]),2);
 		temp3=temp1+temp2;
-		//System.out.print(temp3);
+	
 		distance_feature= (Math.pow(Math.abs(temp3), 0.5));
 		distance_feature=distance_feature/count;
-		
-//		System.out.print(distance_feature+"Prior");
-//		System.out.println("M COUNT"+count+"M COUNT");
-		
-		
-		
-//		if(distance_feature==0.0)
-//		{
-//			distance_feature=1;
-//		}
-//		else
-			
-		
-		
-		//System.out.println(distance_feature);
-		//cos_feature= final_point_x/distance_feature;
-		//System.out.println(cos_feature);
-		//sin_feature= final_point_y/distance_feature;
-		//System.out.println(sin_feature);
+
 		return distance_feature;
 	}
 	
@@ -104,22 +81,16 @@ public class Distance_Feature
 		double temp=0;
 		float cos_feature=0;
 		temp = Distance_calculator();
-		//cos_feature= (final_point_x-x1)/temp;
-		
+
 		return cos_feature;
 		
 	}
 	float sin_feature_calculator()
 	{
 		float temp=0,sin_feature=0;
-		//temp = Distance_calculator();
 		sin_feature= (final_point_y-y1)/temp;
 		
 		return sin_feature;
-		
-	}
-	public static void main(String args[])
-	{
 		
 	}
 
