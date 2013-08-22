@@ -9,7 +9,7 @@ public class DCR {
 	public static double calculateDCR() {
 		int i = 0, j = 0, k = 0;
 		double[][] arr = new double[3][];
-		arr[0] = new double[1000];// Use dynamic arrays in other programs
+		arr[0] = new double[1000];
 		arr[1] = new double[1000];
 		arr[2] = new double[1000];
 
@@ -68,8 +68,6 @@ public class DCR {
 		}
 		
 		double d_changeAverage = d_changeTotal / totalStrokeLength;
-//		System.out.println("This is the max change in direction " + d_changeMax);
-//		System.out.println("This is the average change in direction " + d_changeAverage);
 		return d_changeMax / d_changeAverage;
 		
 	}
